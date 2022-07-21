@@ -67,6 +67,7 @@ footerScroll.addEventListener('click',function(e){
     }
 })
 
+
 signUp.addEventListener('click', function(){
     loginForm.style.backgroundColor = 'white'
     lgModal.classList.add('active')
@@ -88,7 +89,8 @@ function registActive(){
     loginForm.classList.add('active')
     loginFormContent.style.opacity = '1'
 }
-///////////////////////////////////////
+
+////////////////////////////상호////////////////////////////
 // 베스트셀러 책 캐러셀
 // let bookitem = document.querySelectorAll(".bookItem");
 // let bookslider = document.querySelector(".bestSeller-book-move")
@@ -120,20 +122,7 @@ function registActive(){
 
 //베스트 셀러 큰 이미지
 
-// let sellEle = document.querySelectorAll(".sellEle")
-// let sellMove = document.querySelector(".bestSeller-sell-move")
-// let sellCount = 0;
 
-// setInterval(function(){
-//     if(sellEle.length >= sellCount){
-//         sellEle[sellCount].style.opacity =  "0";
-//         sellEle[sellCount].style.transition = "1s"
-//         // sellItem.style.zindex = -sellCount
-
-//         sellCount++
-
-//     }
-// },1000)
 //네비바 픽스드 이벤트
 let scrollNav_bar = document.querySelector(".nav-bar"); 
 
@@ -147,7 +136,6 @@ window.addEventListener("scroll",function(){
 
     
 })
-
 
 // 네비바 스크롤 이동 이벤트
 let scrollele = document.querySelectorAll(".scroll-ele");
@@ -168,9 +156,29 @@ scrollele[2].addEventListener("click",function(){
 
 
 //////////////////상호//////////////////
-                                     
-///////////////////////////////////////
+
+
 //////////////////수근//////////////////
+let SGslides = document.querySelector('.newBook_slides'); //ul
+let SGslide = document.querySelectorAll('.newBook_slides li'); //li를 다 넣기 위해 All를 씀
+let SGcurrentIdx = 0; //클릭할때마다 이 값을 차감해서 슬라이드를 움직이기 위함
+let SGslideCount = SGslide.length; //li의 길이  
+let SGslideWidth = 250; //
+let SGslideMargin = 50;
+// let SGprevBtn = document.querySelector('.prev');
+// let SGnextBtn = document.querySelector('.next');
+// let SGimg = document.querySelectorAll('.newBook_slides li img')
+
+
+
+SGmakeClone();
+
+function SGmakeClone(){
+    for(let i =0; i<SGslideCount; i++) { 
+        var SGcloneSlide = SGslide[i].cloneNode(true); //li의 길이 만큼 클론을 만들어줌 
+        SGcloneSlide.classList.add('clone') //clone 클래스명으로 클론을 추가
+        SGslides.appendChild(SGcloneSlide); // ul의 뒤에 클론을 붙혀줌
+
 let slides = document.querySelector('.newBook_slides');
 let slide = document.querySelectorAll('.newBook_slides li');
 let currentIdx = 0; //클릭할때마다 이 값을 차감해서 슬라이드를 움직이기 위함
@@ -190,54 +198,76 @@ function makeClone(){
         // a.appendChild(b)
         slides.appendChild(cloneSlide);
     }
-    for(let i = slideCount-1; i>=0; i--) {
-        var cloneSlide = slide[i].cloneNode(true);
-        cloneSlide.classList.add('clone')
-        // a.appendChild(b)
-        slides.prepend(cloneSlide);
+    for(let i = SGslideCount-1; i>=0; i--) { 
+        var SGcloneSlide = SGslide[i].cloneNode(true);
+        SGcloneSlide.classList.add('clone')
+        SGslides.prepend(SGcloneSlide); //ul 앞에 클론을 붙혀줌
     } 
-    updateWidth();
-    setInitialPos();
+    SGupdateWidth();
+    SGsetInitialPos();
 
     setTimeout(function(){
-        slides.classList.add('animated');
-    },100);
+        SGslides.classList.add('animated');
+    },1100);
 }
 
-function updateWidth(){
-    let currentSlide = document.querySelectorAll('.newBook_slides li')
-    var newSlideCount = currentSlide.length;
-    var newWidth = (slideWidth + slideMargin) * newSlideCount -slideMargin + 'px';
-    slides.style.width = newWidth;
+function SGupdateWidth(){
+    let SGcurrentSlide = document.querySelectorAll('.newBook_slides li')
+    var SGnewSlideCount = SGcurrentSlide.length;
+    var SGnewWidth = (SGslideWidth + SGslideMargin) * SGnewSlideCount -SGslideMargin + 'px';
+    SGslides.style.width = SGnewWidth;
 };
 
-function setInitialPos() {
-    let initialTranslateValue = -(slideWidth + slideMargin) * slideCount
-    slides.style.transform = 'translateX(' +initialTranslateValue+ 'px)'
+function SGsetInitialPos() {
+    let SGinitialTranslateValue = -(SGslideWidth + SGslideMargin) * SGslideCount
+    SGslides.style.transform = 'translateX(' +SGinitialTranslateValue+ 'px)'
 };
 
-nextBtn.addEventListener('click', function(){
-    moveSlide(currentIdx +1);
-})
-prevBtn.addEventListener('click', function(){
-    moveSlide(currentIdx -1);
-})
+// SGnextBtn.addEventListener('click', function(){
+//     SGmoveSlide(SGcurrentIdx +1);
+// })
+// SGprevBtn.addEventListener('click', function(){
+//     SGmoveSlide(SGcurrentIdx -1);
+// })
 
-function moveSlide(num){
-    slides.style.left = -num * (slideWidth + slideMargin) + 'px';
-    currentIdx = num;
+
+function SGmoveSlide(num){
+    SGslides.style.left = -num * (SGslideWidth + SGslideMargin) + 'px';
+    SGcurrentIdx = num;
     // console.log(currentIdx, slideCount)
-    if(currentIdx == slideCount || currentIdx == -slideCount) {
+    if(SGcurrentIdx == SGslideCount || SGcurrentIdx == -SGslideCount) {
         setTimeout(function(){
-            slides.classList.remove('animated')
-            slides.style.left = '0px';
-            currentIdx = 0;
-        },500);
+            SGslides.classList.remove('animated')
+            SGslides.style.left = '0px';
+            SGcurrentIdx = 0;
+        },1000);
         setTimeout(function(){
-            slides.classList.add('animated')
-        },600); 
+            SGslides.classList.add('animated')
+        },1100); 
     } 
 }
+
+let timer = undefined;
+function autoSlide(){
+    if(timer == undefined){
+        timer = setInterval(function(){
+            SGmoveSlide(SGcurrentIdx +1);
+        },3000);
+    }
+}
+autoSlide();
+function stopSlide(){
+    clearInterval(timer);
+    timer = undefined;
+}
+SGslides.addEventListener('mouseenter',function(){
+    stopSlide();
+})
+SGslides.addEventListener('mouseleave',function(){
+    autoSlide();
+})
+
+
 ///////////////////////////////////////
 //////////////////진주//////////////////
 
