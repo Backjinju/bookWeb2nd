@@ -1,0 +1,682 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    /* background-color: rgb(64, 135, 201); */
+    height: 400vh;
+    z-index: 1;
+}
+
+.header{
+    /* border: 1px solid pink; */
+    width: 100%;
+    height: 450px;
+}
+
+.headerTop{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.headerTop .logoFrame {
+    display: flex;
+    justify-content: center;
+}
+
+.headerTop .loginIcon{
+    display: flex;
+    text-align: right;
+    /* background-color: red; */
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.loginModal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+    z-index: 5000;
+}
+
+.loginModal .fa-xmark{
+    font-size: 2rem;
+    transform: translate(230px,10px);
+    opacity: 0.4;
+}
+
+.loginModal .lgModal{
+    width: 500px;
+    height: 550px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginModal .modalTitle{
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding: 20px;
+    /* background-color: brown; */
+}
+
+.loginModal .inputBox{
+    width: 80%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightcoral; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.425);
+}
+
+.inputBox .fa-user, .inputBox .fa-lock{
+    font-size: 2rem;
+    transform: translate(0,5px);
+}
+
+.inputBox input{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.userName, .passwd{
+    transform: translate(0,-20px);
+    margin: 10px;
+}
+
+.inputBox #modalBtn{
+    width: 85%;
+    padding: 5px;
+    font-size: 2.4rem;
+    margin-top: 10px;
+    background-color: rgb(64, 135, 201);
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+#signUp{
+    margin-top: 15px;
+    font-size: 1.2rem;
+
+}
+
+#signUp a{
+    padding: 5px;
+    color: rgb(21, 89, 153);
+    text-decoration: none;
+}
+
+#signUp a:hover{
+    font-weight: bold;
+}
+
+
+.modalCheckBox .check{
+    margin: 10px 60px;
+    text-align: center;
+    display: inline-block;
+}
+
+.loginIcon .fa-user{
+    font-size: 2.5rem;
+    padding: 5px;
+}
+
+#logo{
+    width: 150px;
+    text-align: left;
+}
+/* /////////////////////수근/////////////////////////// */
+.newBook {
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    position: relative;
+    background-color: rgb(76, 144, 204);
+}
+li {
+    list-style: none;
+}
+.newBook_title {
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: #ccc;
+}
+.newBook_title:hover {
+    color: rgba(0, 0, 0, 0.571);
+}
+.newBook_slide_wrapper {
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    height: 500px;
+    margin: 50px auto;
+}
+.newBook_slides {
+    position: relative;
+    left: 0; top: 0;
+
+}
+.newBook_slides.animated {
+    transition: 0.5s ease-out;
+
+}
+.newBook_slides li{
+    width: 250px;
+    height: 500px;
+    float: left;
+}
+.newBook_slides li:not(:last-child) {
+    margin-right: 30px;
+}
+.newBook_slides li .img_box {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+.newBook_slides li .img_box > span {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+}
+.newBook_slides li img {
+    width: 150px;
+}
+.newBook_slides li img:hover {
+    width: 200px;
+}
+.newBook_controls span {
+    position: absolute;
+    top: 40%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color:  rgb(76, 144, 204);;
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+}
+.newBook_controls span:hover {
+    background-color: rgb(98, 96, 96);
+    transition: ease-out 0.35s;
+}
+.prev {
+    left: 0px;
+}
+
+.next {
+    right: 0px;
+}
+
+/* ///////////////////////수근 끝/////////////////////////////////////// */
+.genreBook{
+    border: 1px solid black;
+    width: 100%;
+    height: 800px;
+}
+/* ////////////-----------------양희 시작--------------------------///////// */
+.reviewBook{
+    border: 1px solid green;
+    background-color: white;
+    width: 100%;
+    height: 800px;
+}
+.reviewtitle{
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: #1E90FF;
+    font-size: 1.5rem;
+    margin: 8px 0;
+}
+.reviewtitle::before{
+    content: "";
+    flex-grow: 1;
+    margin: 0 16px;
+    background: #1E90FF;
+    height: 2px;
+}
+.reviewtitle::after{
+    content: "";
+    flex-grow: 1;
+    margin: 0 16px;
+    background: #1E90FF;
+    height: 2px;
+}
+.reviewcarousel{
+    border: 1px solid red;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.reviewboxs{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border: 1px solid black;
+    overflow: hidden;
+}
+.reviewboxs.animated{
+    transition: .5s ease-out;
+}
+.reviewbox{
+    width: 20%;
+    height: 85%;
+    margin: 0 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px gray;
+}
+.reviewbox:hover .topimg img{
+    opacity: 0.5;
+}
+.reviewbox .topimg{
+    width: 100%;
+    height: 80%;
+}
+.topimg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 0 0;
+    transition: .3s;
+    cursor: pointer;
+}
+.bottomtext{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bottomtext i{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.bottomtext span{
+    font-weight: bold;
+    color: #333;
+}
+.lefttext{
+    margin-left: 10px;
+}
+
+.righttext{
+    margin-right: 10px;
+    margin-top: 3px;
+}
+.righttext .uil-heart{
+    color: red;
+}
+#arrowleft{
+    font-size: 2rem;
+    cursor: pointer;
+}
+#arrowright{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/*////////// -------------------양희 끝--------------------------/////////---- */
+
+
+.footer{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icons{
+    width: 100%;
+    height: 100px;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(15, 15, 155, 0.377);
+}
+
+.footer .icons .iconFrame{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(30, 83, 133);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.iconFrame .ficon {
+    font-size: 1.5rem;
+    filter: invert();
+}
+.footerScroll{
+    /* background-color: red; */
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerScroll ul li{
+    display: inline-block;
+    margin: 10px;
+    opacity: 0.7;
+    font-size: 1.1rem;
+}
+
+.loadingImg{
+    background-color: rgb(175, 215, 233);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.loadingImg.fadeOut{
+    display: none;
+}
+
+/* ///////////////////////백진주 영역 시작--------------------------------------------------- */
+/* 장르별 도서 */
+.gb_mtit{
+    font-size: 2.5rem;
+    padding: 20px 0px;
+}
+.gb_cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.gb_item {
+    display: inline-block;
+    margin: 20px 20px;
+    text-align: center;
+}
+.gb_box{
+    position: relative;
+    
+}
+.gb_thumb img{
+    width: 200px;
+    height: 300px;
+}
+/* 호버기능을 위한 숨긴 공간 */
+.gb_tagList{
+    overflow: hidden;
+    position: absolute;
+    background:linear-gradient(#ffffff,white);
+    width: 200px;
+    height: 0px;    
+    bottom: 36px;    
+    transition: all 1.5s ease;
+}
+/* 목록 box 호버시 이미지 라인 표현 */
+/* .gb_box:hover .gb_thumb img{
+    border: 3px solid blue;
+} */
+/* 목록 box 선택시 아래에서 위로 호버기능 */
+.gb_box:hover .gb_tagList{    
+    height: 200px;    
+    opacity: 0.7; 
+}
+.gb_tagList a{
+    padding-top: 10px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(79, 79, 235);
+    font-size: 2.5rem;
+    font-weight: 1300;
+}
+.gb_genre{
+    font-size: 1.5rem;
+}
+
+
+/* 장르별 도서 새페이지영역*/
+.genre_mid_slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 550px;    
+    /* background-color: blueviolet; */
+    overflow: scroll;
+}
+.genre_mid_slide_box{
+    text-align: center;
+    width: 200px;
+    height: 250px;
+    margin: 10px;
+    border: 3px solid blue;
+    /* background-color: blue; */
+}
+.genre_mid_slide_box a{
+    text-decoration: none;
+    color: blue;
+}
+
+.genre_thumb img{
+    width:194px;
+    height: 150px;
+}
+/* ///////////////////////백진주 영역 끝--------------------------------------------------- */
+
+/* //////이상호////////////////////////////////////////////////// */
+.nav{
+    /* 네비바 영역 시작 */
+    border: 1px solid black;
+}
+.nav-bar{
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+.nav-bar-fixed{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 79.8%;
+    border: 1px solid black;
+}
+
+.nav-bar > span{
+    padding: 20px;
+}
+.nav-bar-fixed > span{
+    padding: 20px;
+}
+.nav-bar-dropdown{
+    /* 네비바 드롭다운  */
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 100%; 
+    z-index: 100;
+}
+.nav-bar-dropdown > div{
+    /* 드롭다운 이미지 정렬 */
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar-dropdown > div> a > img{ 
+    width: 120px;
+}
+.nav-bar-dropdown > div > a > span{
+    color: white;
+    position: relative;
+    right: 120px;
+    bottom: 160px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.nav-bar > span:first-child:hover ~ .nav-bar-dropdown{
+    /* 드롭다운 호버 */
+    display: flex;
+}
+
+.nav-bar-modal{
+    /* 헤더 하단 가려주는 것 */
+    position: absolute;
+    width: 100%;
+    top: 265px;
+    height: 55px;
+    background-color: rgba(153,153,153, 0.5);
+    display: none;
+
+}
+.nav-bar > span:first-child:hover ~ .nav-bar-modal{
+    /* 헤더 가려주는 배경 호버 */
+    display: block;
+
+}
+.bestSeller{
+    /* 베스트셀러 시작 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+}
+.bestSeller-sell, .bestSeller-book{
+    margin: 0 25px;
+    height: 200px;
+}
+.bestSeller > i{
+    /* 아이콘 사이즈 조절 */
+    font-size: 2.4rem;
+    cursor: pointer;
+
+}
+.bestSeller-sell{
+    /* 베스트셀러 큰 이미지 캐러셀 */
+    border: 1px solid black;
+    width: 60%;
+    height: 250px;
+  
+}
+.bestSeller-sell-warp{
+    /* 캐러셀 오버플로우 히든 */
+    overflow: hidden;
+}
+.bestSeller-sell-move{
+    /* 캐러셀 움직이는 디브 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+
+
+
+.bestSeller-book{
+    /* 베스트셀러 작은이미지 */
+    width: 14%;
+    height: 220px;
+    padding-top: 15px;
+  
+}
+.bestSeller-book > div > img{
+    width: 100%;
+
+}
+
+.bestSeller-book-modal{
+    /* 작은이미지 모달 */
+    width: 11.3%;
+    height: 220px;
+    position: absolute;
+    border: 1px solid black;
+    top: 98px;
+    background-color: rgba(153,153,153, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+}
+
+.bestSeller-book-modal > p{
+    font-size: 1.5rem;
+}
+
+.bestSeller-book > div:hover ~ .bestSeller-book-modal{
+    /* 베스트셀러 작은이미지 모달 호버 */
+    display: flex;
+}
+
+
+.bestSeller-book > div:nth-child(2) > img
+,.bestSeller-book > div:nth-child(3) > img{
+    /* 책 이미지 캐러셀 준비 */
+    display: none;
+}
+
+/* ///////////////////////////////////이상호//////////////////////////////// */
+
