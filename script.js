@@ -209,7 +209,36 @@ function moveSlide(num){
 ///////////////////////////////////////
 //////////////////진주//////////////////
 
-///////////////////////////////////////
+$(document).ready(function(){
+
+    var navHeight = $(".genre_mid_slide").height(); 
+    //navHeight 의 높이를 구하기
+
+    $(".genre_mid_slide_box").hide();
+    //스크롤시 나타날 객체 미리 숨기기
+
+    $(window).scroll(function(){  // 윈도우 스크롤 기능 작동
+        var rollIt = $(this).scrollTop() >= navHeight; 
+// 스크롤의 정도가 navHeight 의 값을 넘었을 때 == 윈도우 스크롤의 값이 navHeight 의 높이와 같거나 크다
+
+/*
+scrollTop 은 윈도우에서 스크롤의 위치가 가장 상위에 있다는 의미로 해석
+스크롤의 위치가 화면 아래일수록 == scrollTop 의 값이 커짐
+*/
+
+    if(rollIt){ 
+		//윈도우 스크롤 기능의 값이 navHeight 의 높이와 같거나 크면
+            $(".genre_mid_slide_box").show().css({"position":"fixed"});
+        }
+        else{
+            $(".genre_mid_slide_box").hide();
+        }
+    });
+    
+});
+
+
+//////////////////진주끝/////////////////////
 
 ////////////////////////양희시작///////////////////////////////
 
@@ -217,8 +246,8 @@ function moveSlide(num){
 // 클릭하면 모달창뜨게하기
 // 좋아요 누르면 하트 색꽉차게
 
-// let heart = document.querySelector('.uil-heart');
-// let arrow = document.querySelector('.uil-location-arrow-alt');
+let heart = document.querySelector('.uil-heart');
+let arrow = document.querySelector('.uil-location-arrow-alt');
 
 
 
