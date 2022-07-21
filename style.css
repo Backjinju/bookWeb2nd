@@ -253,9 +253,9 @@ li {
     width: 100%;
     height: 800px;
 }
-/* ////////////-----------------양희 시작--------------------------///////// */
+/* //////////////////////////////////양희 시작///////////////////////////////////// */
 .reviewBook{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     background-color: white;
     width: 100%;
     height: 800px;
@@ -267,6 +267,9 @@ li {
     color: #1E90FF;
     font-size: 1.5rem;
     margin: 8px 0;
+    letter-spacing: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 5vh;
 }
 .reviewtitle::before{
     content: "";
@@ -282,32 +285,35 @@ li {
     background: #1E90FF;
     height: 2px;
 }
+/* ----------캐러셀------------- */
 .reviewcarousel{
-    border: 1px solid red;
-    width: 100%;
+    width: 90%;
     height: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
+    transform: translate(4.5vw,0);
+    z-index: 10;
+    position: relative;
+    /* border: 1px solid black; */
 }
 .reviewboxs{
-    width: 80%;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: row;
-    border: 1px solid black;
-    overflow: hidden;
+    position: relative;
+    border: 1px solid red;
 }
-.reviewboxs.animated{
+
+.reviewboxs.animatedY{
     transition: .5s ease-out;
 }
 .reviewbox{
-    width: 20%;
+    /* width: 13vw; */
+    width: 250px;
     height: 85%;
-    margin: 0 20px;
+    /* margin-right: 1vw; */
+    margin-right: 30px;
     border-radius: 5px;
     box-shadow: 0 1px 2px gray;
 }
@@ -315,7 +321,6 @@ li {
     opacity: 0.5;
 }
 .reviewbox .topimg{
-    width: 100%;
     height: 80%;
 }
 .topimg img{
@@ -326,7 +331,6 @@ li {
     cursor: pointer;
 }
 .bottomtext{
-    width: 100%;
     height: 20%;
     display: flex;
     align-items: center;
@@ -351,16 +355,25 @@ li {
 .righttext .uil-heart{
     color: red;
 }
+/* -------화살표---------- */
+.arrowsY{
+    display: flex;
+    justify-content: space-between;
+}
 #arrowleft{
     font-size: 2rem;
     cursor: pointer;
+    position: relative;
+    bottom: 19vh;
 }
 #arrowright{
     font-size: 2rem;
-    cursor: pointer;
+    cursor: pointer;   
+    position: relative;
+    bottom: 19vh;
 }
 
-/*////////// -------------------양희 끝--------------------------/////////---- */
+/* //////////////////////////////양희 끝/////////////////////////////////// */
 
 
 .footer{
