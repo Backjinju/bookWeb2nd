@@ -139,23 +139,69 @@
                 <i class="fa-solid fa-xmark"></i>
                 <div class="modalTitle">Sign In</div>
                 <div class="inputBox">
-                    <div class="userName">
+                    <div class="userNameBox">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" id="userName" placeholder="User Name">
+                        <input type="text" class="userName" placeholder="User Name">
                     </div>
-                    <div class="passwd">
+                    <div class="passwdBox">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" id="passwd" placeholder="Password">
+                        <input type="password" class="passwd" placeholder="Password">
                     </div>
 
-                    <button id="modalBtn">Sign In</button>
+                    <button class="modalBtn">LOGIN</button>
                 </div>
                 <div class="modalCheckBox">
-                    <p id="signUp">아직 회원이 아니신가요?<a href="">회원 가입</a></p>
+                    <p id="signUp">SIGN UP</p>
                 </div>
             </div>
-        </div>
+            <img src="loadingBook.gif" class="loadingBook" alt="">
+            <div class="loginForm">
+                <p class="loginFormTitle">Sign Up</p>
+                <div class="loginFormContent">
+                    <input type="text" class="legId" placeholder="ID">
+                    <input type="text" class="legPasswd" placeholder="비밀번호">
+                    <input type="password" class="legPasswdCheck" placeholder="비밀번호 재확인">
+                    <input type="text" class="legName" placeholder="이름">
+                    <div class="birthBox">
+                        <input type="text" name="" class="legYear" placeholder="연도(4자)">
+                        <select name="" id="" class="legMonth">
+                            <option value="month" disabled selected>월</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <input type="text" class="legDay" placeholder="일">
+                    </div>
+                    <input type="text" class="legIdentity" placeholder="주민등록번호">
+                    <div class="addressBox">
+                        <input type="text" class="legAddress" placeholder="주소">
+                        <button class="addressBtn">주소 검색</button>
+                    </div>
+                    <input type="text" class="legPhone" placeholder="전화 번호">
+                    <button class="legBtn">가입하기</button>
+                    <!--
+                        아이디 
+                        비밀번호
+                        비밀번호 확인
+                        이름
+                        생년월일 / 성별
+                        주소
+                        핸드폰 번호
+                        [가입] - 버튼
+                     -->
+                </div>
+            </div>
 
+        </div>
 
 
         <!-- 신간 도서 section start -->

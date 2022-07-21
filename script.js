@@ -10,6 +10,14 @@ let loginModal = document.querySelector('.loginModal')
 let body = document.querySelector('body')
 let lgModal = document.querySelector('.lgModal')
 let xmark = document.querySelector('.fa-xmark')
+let signUp = document.querySelector('#signUp')
+let modalCheckBox = document.querySelector('.modalCheckBox')
+let inputText = document.querySelector('.userName')
+let inputPasswd = document.querySelector('.passwd')
+let modalBtn = document.querySelector('.modalBtn')
+let loadingBook = document.querySelector('.loadingBook')
+let loginForm = document.querySelector('.loginForm')
+let loginFormContent = document.querySelector('.loginFormContent')
 
 window.onload = () => {
     loadingPage();
@@ -19,7 +27,7 @@ function loadingFadeout(){
     loading.classList.add('fadeOut')
 }
 function loadingPage(){
-    setTimeout(loadingFadeout,500) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
+    setTimeout(loadingFadeout,5) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
 }
 
 loginIcon.addEventListener('click',function(){
@@ -35,6 +43,10 @@ xmark.addEventListener('click',function(){
 loginModal.addEventListener('click', function(){
     if(event.target.className == 'loginModal'){
         loginModal.style.display = 'none'
+        lgModal.classList.remove('active')
+        modalBtn.classList.remove('active')
+        signUp.classList.remove('signUpActive')
+        loginForm.classList.remove('active')
     }
 })
 
@@ -54,6 +66,28 @@ footerScroll.addEventListener('click',function(e){
             behavior: "smooth"}) 
     }
 })
+
+signUp.addEventListener('click', function(){
+    loginForm.style.backgroundColor = 'white'
+    lgModal.classList.add('active')
+    modalBtn.classList.add('active')
+    signUp.classList.add('signUpActive')
+    setTimeout(registLoading,500)
+    setTimeout(registLoadingEnd,2400)
+    setTimeout(registActive,2600)
+})
+
+function registLoading(){
+    loadingBook.style.opacity = '1'
+}
+function registLoadingEnd(){
+    loadingBook.style.opacity = '0'
+}
+
+function registActive(){
+    loginForm.classList.add('active')
+    loginFormContent.style.opacity = '1'
+}
 ///////////////////////////////////////
 
 //슬라이드이벤트 셀렉터

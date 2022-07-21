@@ -30,6 +30,8 @@ body{
     height: 450px;
 }
 
+/* ///////////////////////박성진 header logo&login START////////////////////// */
+
 .headerTop{
     display: flex;
     justify-content: center;
@@ -50,6 +52,11 @@ body{
     top: 15px;
 }
 
+.loginIcon .fa-user{
+    font-size: 1.9rem;
+    padding: 5px;
+}
+
 .loginModal{
     position: fixed;
     width: 100%;
@@ -60,22 +67,33 @@ body{
     align-items: center;
     /* display: none; */
     z-index: 5000;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .loginModal .fa-xmark{
     font-size: 2rem;
-    transform: translate(230px,10px);
-    opacity: 0.4;
+    transform: translate(180px,10px);
+    opacity: 0.8;
+    color: white;
 }
 
 .loginModal .lgModal{
-    width: 500px;
+    width: 400px;
     height: 550px;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(64, 135, 201);
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+}
+
+.loginModal .loadingBook{
+    position: fixed;
+    opacity: 0;
+    transition: 0.3s;
+    width: 200px;
 }
 
 .loginModal .modalTitle{
@@ -84,6 +102,7 @@ body{
     font-size: 3rem;
     padding: 20px;
     /* background-color: brown; */
+    color: white;
 }
 
 .loginModal .inputBox{
@@ -93,50 +112,70 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: lightcoral; */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.425);
 }
 
 .inputBox .fa-user, .inputBox .fa-lock{
     font-size: 2rem;
     transform: translate(0,5px);
+    color: white;
 }
 
 .inputBox input{
-    width: 300px;
+    width: 230px;
     height: 40px;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     outline: none;
+    background-color: transparent;
     font-size: 1.5rem;
+    color: white;
+}
+
+.inputBox input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .userName, .passwd{
-    transform: translate(0,-20px);
     margin: 10px;
 }
 
-.inputBox #modalBtn{
+.inputBox{
+    background-color: transparent;
+}
+
+.modalBtn{
+    background-color: white;
+}
+
+.inputBox .modalBtn{
     width: 85%;
     padding: 5px;
     font-size: 2.4rem;
-    margin-top: 10px;
-    background-color: rgb(64, 135, 201);
-    color: white;
+    margin-top: 40px;
+    color: rgb(64, 135, 201);
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+.modalCheckBox{
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 #signUp{
     margin-top: 15px;
     font-size: 1.2rem;
-
-}
-
-#signUp a{
+    color: rgb(64, 135, 201);
     padding: 5px;
-    color: rgb(21, 89, 153);
-    text-decoration: none;
+    transform: translate(0,-5px);
+    cursor: pointer;
 }
 
 #signUp a:hover{
@@ -150,15 +189,123 @@ body{
     display: inline-block;
 }
 
-.loginIcon .fa-user{
-    font-size: 2.5rem;
-    padding: 5px;
-}
 
 #logo{
     width: 150px;
     text-align: left;
 }
+
+.loginForm{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    /* width: 500px;
+    height: 800px; */
+    background-color:rgb(64, 135, 201);
+}
+
+.loginFormTitle{
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.loginForm .loginFormContent{
+    opacity: 0;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: coral; */
+}
+
+.loginFormContent input{
+    width: 100%;
+    border: none;
+    margin: 5px 0;
+    padding: 20px 10px;    
+    border-radius: 1px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.39);
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.loginFormContent input::placeholder{
+    font-size: 1.1rem;
+}
+
+.loginFormContent .legYear{
+    width: 128px;
+    margin-right: 20px;
+}
+
+.loginFormContent .legMonth{
+    padding: 19px;
+    width: 90px;
+    margin-right: 20px;
+    border-radius: 1px;
+    border: none;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+.loginFormContent .legDay{
+    width: 128px;
+}
+
+.loginFormContent .legAddress{
+    width: 300px;
+}
+
+.loginFormContent .addressBtn{
+    width: 115px;
+    height: 60px;
+    border: none;
+    border-radius: 1px;
+    background-color: #1E90FF;
+    color: white;
+}
+
+.legBtn{
+    border: none;
+    width: 100%;
+    height: 80px;
+    font-size: 1.3rem;
+    background-color: #1E90FF;
+    color: white;
+    border-radius: 2px;
+}
+
+
+.loginForm.active{ width: 550px; height: 800px; transition: 1.5s;}
+.lgModal.active{animation: loginFormActive 0.5s ease forwards;}
+.modalBtn.active{animation: loginFormActive 0.5s ease forwards;}
+.signUpActive{opacity: 0; transition: 0.5s;}
+.loadingBook .active{display: block;}
+.loadingBook .inactive{display: none;}
+
+@keyframes loginFormActive {
+    form{
+
+    }
+    to{
+        background-color: white;
+        color: white;
+    }
+}
+
+
+/* ///////////////////////박성진 header logo&login END ////////////////////// */
+
 /* /////////////////////수근/////////////////////////// */
 .newBook {
     width: 100%;
@@ -363,6 +510,8 @@ li {
 /*////////// -------------------양희 끝--------------------------/////////---- */
 
 
+/* /////////////////박성진 - footer START /////////////////////////////////// */
+
 .footer{
     /* border: 1px solid yellow; */
     width: 100%;
@@ -414,6 +563,10 @@ li {
     font-size: 1.1rem;
 }
 
+/* /////////////////박성진 - footer END /////////////////////////////////// */
+
+/* /////////////////박성진 - loading START /////////////////////////////////// */
+
 .loadingImg{
     background-color: rgb(175, 215, 233);
     width: 100vw;
@@ -429,6 +582,9 @@ li {
 .loadingImg.fadeOut{
     display: none;
 }
+
+/* /////////////////박성진 - loading END /////////////////////////////////// */
+
 
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
