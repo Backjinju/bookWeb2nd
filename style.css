@@ -12,8 +12,6 @@ body{
     display: flex;
     justify-content: center;
 }
-
-
 .container{
     display: flex;
     flex-direction: column;
@@ -398,7 +396,7 @@ li {
 .genreBook{
     border: 1px solid black;
     width: 100%;
-    height: 800px;
+    height: 800px; 
 }
 /* ////////////-----------------양희 시작--------------------------///////// */
 .reviewBook{
@@ -591,60 +589,137 @@ li {
 .gb_mtit{
     font-size: 2.5rem;
     padding: 20px 0px;
+    text-align: center;
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: #1E90FF;
+    margin: 8px 0;
+}
+.gb_mtit::before{
+    content: "";
+    flex-grow: 1;
+    margin: 0 16px;
+    background: #1E90FF;
+    height: 2px;
+}
+.gb_mtit::after{
+    content: "";
+    flex-grow: 1;
+    margin: 0 16px;
+    height: 2px;
+    background: #1E90FF;
 }
 .gb_cont{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center; 
     
 }
+.gb_cont ul{
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;   
+}
+
 .gb_item {
-    display: inline-block;
-    margin: 20px 20px;
+    display: inline-block;    
     text-align: center;
 }
 .gb_box{
     position: relative;
-    
+    width: 600px;
+    height: 230px;
+    margin: 10px 10px;
 }
-.gb_thumb img{
-    width: 200px;
-    height: 300px;
+.gb_thumb{
+    width: 100%;
+    position: relative;    
 }
-/* 호버기능을 위한 숨긴 공간 */
-.gb_tagList{
-    overflow: hidden;
+.gb_thumb_cont{
     position: absolute;
-    background:linear-gradient(#ffffff,white);
-    width: 200px;
-    height: 0px;    
-    bottom: 36px;    
-    transition: all 1.5s ease;
+    top:0;   
 }
-/* 목록 box 호버시 이미지 라인 표현 */
-/* .gb_box:hover .gb_thumb img{
-    border: 3px solid blue;
-} */
-/* 목록 box 선택시 아래에서 위로 호버기능 */
-.gb_box:hover .gb_tagList{    
-    height: 200px;    
-    opacity: 0.7; 
+.gb_thumb_title{
+    position: absolute;
+    width: 180px;
+    height: 230px;
+    top:0px;
+    background-color: rgb(27, 27, 27);
+    opacity: 0.5;
+    z-index: 1;       
 }
-.gb_tagList a{
-    padding-top: 10px;
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    color: rgb(79, 79, 235);
-    font-size: 2.5rem;
-    font-weight: 1300;
+.gb_thumb_title_txt{
+    position: absolute;
+    top: 0px;
+    padding: 0px 10px;
+    z-index: 5;
 }
 .gb_genre{
-    font-size: 1.5rem;
+    width: 160px;
+    font-weight: 600;
+    padding: 10px 5px;
+    z-index: 5;
+    color: yellow;        
 }
 
+.gb_thumb_title_txt span{
+    display: block;
+    width: 130px;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 5px;
+    color: white;
+    z-index: 2;     
+}
+
+.gb_tagList{
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    bottom: 10px;
+    right: 20px;    
+    text-align: right;
+}
+.gb_tagList_txt{
+    font-size:1.2rem;
+    color:white;
+    text-shadow: 0 0 5px rgb(70, 70, 70);
+    overflow:hidden;
+    white-space:nowrap;
+    animation: typing 10s steps(27) forwards, 
+                blink .8s step-end infinite;
+    animation-iteration-count: infinite;
+}
+@keyframes blink{
+    from, to{
+        border-color:transparent;
+    }
+    50%{
+        border-color:white;
+    }
+}
+@keyframes typing{
+    0%{
+        width:0%;
+    }
+    30%{
+        width:100%
+    }
+    80%{
+        width:100%
+    }
+    90%{
+        width:0%
+    }
+    100%{
+        width:0%
+    }
+}
 
 /* 장르별 도서 새페이지영역*/
+
 .genre_mid_slide{
     display: flex;
     align-items: center;
@@ -652,26 +727,39 @@ li {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 550px;    
+    height: 300px;    
     /* background-color: blueviolet; */
     overflow: scroll;
+    background-color: aqua;
+    margin-top: 20px;
 }
+
+/* .genre_mid_slide::-webkit-scrollbar {
+    display: none; Chrome, Safari, Opera
+} */
 .genre_mid_slide_box{
     text-align: center;
     width: 200px;
     height: 250px;
     margin: 10px;
-    border: 3px solid blue;
-    /* background-color: blue; */
+    border: 3px solid rgb(75, 75, 75);
+    position: relative;
+    
 }
-.genre_mid_slide_box a{
-    text-decoration: none;
-    color: blue;
+.genre_thumb{
+    position: absolute;
+    top:0;
+    left:0;    
 }
 
 .genre_thumb img{
     width:194px;
-    height: 150px;
+    height:150px;
+}
+.genre_doc_box{
+    position: absolute;
+    top:160px;
+
 }
 /* ///////////////////////백진주 영역 끝--------------------------------------------------- */
 
