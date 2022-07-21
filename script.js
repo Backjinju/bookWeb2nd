@@ -177,8 +177,8 @@ let currentIdx = 0; //클릭할때마다 이 값을 차감해서 슬라이드를
 let slideCount = slide.length;
 let slideWidth = 250;
 let slideMargin = 30;
-prevBtn = document.querySelector('.prev');
-nextBtn = document.querySelector('.next');
+let prevBtn = document.querySelector('.prev');
+let nextBtn = document.querySelector('.next');
 
 makeClone();
 
@@ -278,54 +278,100 @@ scrollTop 은 윈도우에서 스크롤의 위치가 가장 상위에 있다는 
 // 클릭하면 모달창뜨게하기
 // 좋아요 누르면 하트 색꽉차게
 
-let heart = document.querySelector('.uil-heart');
-let arrow = document.querySelector('.uil-location-arrow-alt');
+var slidesY = document.querySelector('.reviewboxs'), //리뷰박스틀
+    slideY = document.querySelectorAll('.reviewbox'), //리뷰박스하나하나
+    slideCountY = slideY.length, //슬라이드개수
+    slideWidthY = 250, 
+    slideMarginY = 30,  
+    currentIdxY = 0, 
+    preBtnY = document.querySelector('.uil-angle-left-b'),
+    nextBtnY = document.querySelector('.uil-angle-right-b');
 
 
+    makeCloneY();
 
-let slidesY = document.querySelector('.reviewboxs'),
-    slideY = document.querySelectorAll('.reviewbox'),
-    currentIdxY = 0,
-    slideCountY = slideY.length,
-    slideWidthY = 20,
-    slideMarginY = 20,
-    preBtnY = document.querySelector('#arrowleft');
-    nextBtnY = document.querySelector('#arrowright');
+    //양쪽으로 5개씩 복제 총 15개
+    function makeCloneY(){
 
-    makeClone();
-
-    function makeClone(){
-        for(let i = 0; i < slideCount; i++)
+        for(let i = 0; i < slideCountY; i++)
         {
-            let cloneSlideY = slideY[i].cloneNode(true);
-            cloneSlideY.classList.add('clone');
+            var cloneSlideY = slideY[i].cloneNode(true);
+            cloneSlideY.classList.add('cloneY');
             slidesY.appendChild(cloneSlideY); 
         }
         for(let j = slideCountY-1; j >= 0; j--)
         {
-            let cloneSlideY = slideY[j].cloneNode(true);
-            cloneSlideY.classList.add('clone');
+            var cloneSlideY = slideY[j].cloneNode(true);
+            cloneSlideY.classList.add('cloneYH');
             slidesY.prepend(cloneSlideY);
         }
 
-        updateWidth();
-        // setInitialPos();
-        slidesY.classList.add('animated');
+        updateWidthY();
+        setInitialPosY();
+
+        //새로고침했을 때 이동하는게 보이는 것을 방지
+        setTimeout(function(){
+            slidesY.classList.add('animatedY');
+        }, 100);
     }
 
-    function updateWidth(){
-        let currentSlideY = document.querySelectorAll('.reviewbox');
-        // console.log(currentSlide);
-        let newSlideCountY = currentSlideY.length;
-        // console.log(newSlideCount);
-        let newWidth = calc(slideWidthY + "%" + slideMarginY + "px")*newSlideCountY - slideMarginY +"px";
-        console.log(newWidth);
-        slidesY.style.width = newWidth;
+    //너비를 늘어난 개수만큼 조절
+    function updateWidthY(){
+        var currentSlideY = document.querySelectorAll('.reviewbox');
+        // console.log(currentSlideY);
+        var newSlideCountY = currentSlideY.length;
+        var newWidthY = ((slideWidthY + slideMarginY) * newSlideCountY - slideMarginY) + "px";
+        slidesY.style.width = newWidthY;
     }
 
-    function setInitialPos(){
-        // let initialTranslateValue = calc(calc(slideWidth + "%" + slideMargin + "px")*slideCount);
-        // slides.style.transform = "translateX(" + initialTranslateValue+ "%)";
 
+    //복제한 것부터가 아니라 가운데부터 위치해 있기 위해
+    function setInitialPosY(){
+        var initialTranslateValueY = -(slideWidthY + slideMarginY) * slideCountY;
+        slidesY.style.transform = "translateX(" + initialTranslateValueY+ "px)";
     }
+
+    //버튼을 눌렀을 때 이동 > 이벤트 구현 시작
+    nextBtnY.addEventListener('click', function(){
+        // moveSlideY라는 함수 생성하기
+        moveSlideY(currentIdxY + 1);
+    });
+
+    preBtnY.addEventListener('click', function(){
+        //moveSlideY라는 함수 생성하기
+        moveSlideY(currentIdxY - 1);
+    })
+
+    //moveSlideY함수 기능
+    function moveSlideY(numY){
+        slidesY.style.left =  -numY * (slideWidthY + slideMarginY) + "px";
+        currentIdxY = numY;
+        if(currentIdxY == slideCountY || currentIdxY == -slideCountY) {
+            //0으로 되돌아가기
+            setTimeout(function(){
+                slidesY.classList.remove('animatedY');
+                slidesY.style.left = '0px';
+                currentIdxY = 0;
+            },500);
+            //다시 animatedY효과추가
+            setTimeout(function(){
+                slidesY.classList.add('animatedY');
+            },500); 
+        } 
+    }
+
+//고쳐야 할 것
+//무한으로 돌아가는 것처럼 보이는 것
+//첫번째 클릭 때 transition이 적용없이 이동하는 것
+
+// let heart = document.querySelector('.uil-heart');
+// let arrow = document.querySelector('.uil-location-arrow-alt');
+
+
+// heart.addEventListener('click', function(){
+
+// });
+
+
+
 //////////////////////양희끝////////////////////////
