@@ -86,20 +86,20 @@ footerScroll.addEventListener('click',function(e){
 
 //베스트 셀러 큰 이미지
 
-let sellEle = document.querySelectorAll(".sellEle")
-let sellMove = document.querySelector(".bestSeller-sell-move")
-let sellCount = 0;
+// let sellEle = document.querySelectorAll(".sellEle")
+// let sellMove = document.querySelector(".bestSeller-sell-move")
+// let sellCount = 0;
 
-setInterval(function(){
-    if(sellEle.length >= sellCount){
-        sellEle[sellCount].style.opacity =  "0";
-        sellEle[sellCount].style.transition = "1s"
-        // sellItem.style.zindex = -sellCount
+// setInterval(function(){
+//     if(sellEle.length >= sellCount){
+//         sellEle[sellCount].style.opacity =  "0";
+//         sellEle[sellCount].style.transition = "1s"
+//         // sellItem.style.zindex = -sellCount
 
-        sellCount++
+//         sellCount++
 
-    }
-},1000)
+//     }
+// },1000)
 //네비바 픽스드 이벤트
 let scrollNav_bar = document.querySelector(".nav-bar"); 
 
