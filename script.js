@@ -178,7 +178,8 @@ function SGmakeClone(){
         var SGcloneSlide = SGslide[i].cloneNode(true); //li의 길이 만큼 클론을 만들어줌 
         SGcloneSlide.classList.add('clone') //clone 클래스명으로 클론을 추가
         SGslides.appendChild(SGcloneSlide); // ul의 뒤에 클론을 붙혀줌
-
+    }
+}
 let slides = document.querySelector('.newBook_slides');
 let slide = document.querySelectorAll('.newBook_slides li');
 let currentIdx = 0; //클릭할때마다 이 값을 차감해서 슬라이드를 움직이기 위함
@@ -271,16 +272,16 @@ SGslides.addEventListener('mouseleave',function(){
 ///////////////////////////////////////
 //////////////////진주//////////////////
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    var navHeight = $(".genre_mid_slide").height(); 
-    //navHeight 의 높이를 구하기
+//     var navHeight = $(".genre_mid_slide").height(); 
+//     //navHeight 의 높이를 구하기
 
-    $(".genre_mid_slide_box").hide();
-    //스크롤시 나타날 객체 미리 숨기기
+//     $(".genre_mid_slide_box").hide();
+//     //스크롤시 나타날 객체 미리 숨기기
 
-    $(window).scroll(function(){  // 윈도우 스크롤 기능 작동
-        var rollIt = $(this).scrollTop() >= navHeight; 
+//     $(window).scroll(function(){  // 윈도우 스크롤 기능 작동
+//         var rollIt = $(this).scrollTop() >= navHeight; 
 // 스크롤의 정도가 navHeight 의 값을 넘었을 때 == 윈도우 스크롤의 값이 navHeight 의 높이와 같거나 크다
 
 /*
@@ -288,16 +289,16 @@ scrollTop 은 윈도우에서 스크롤의 위치가 가장 상위에 있다는 
 스크롤의 위치가 화면 아래일수록 == scrollTop 의 값이 커짐
 */
 
-    if(rollIt){ 
-		//윈도우 스크롤 기능의 값이 navHeight 의 높이와 같거나 크면
-            $(".genre_mid_slide_box").show().css({"position":"fixed"});
-        }
-        else{
-            $(".genre_mid_slide_box").hide();
-        }
-    });
+//     if(rollIt){ 
+// 		//윈도우 스크롤 기능의 값이 navHeight 의 높이와 같거나 크면
+//             $(".genre_mid_slide_box").show().css({"position":"fixed"});
+//         }
+//         else{
+//             $(".genre_mid_slide_box").hide();
+//         }
+//     });
     
-});
+// });
 
 
 //////////////////진주끝/////////////////////
@@ -389,6 +390,7 @@ var slidesY = document.querySelector('.reviewboxs'), //리뷰박스틀
             },500); 
         } 
     }
+    
 
 //고쳐야 할 것
 //무한으로 돌아가는 것처럼 보이는 것
