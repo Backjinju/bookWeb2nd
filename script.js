@@ -100,23 +100,23 @@ window.addEventListener("scroll",function(){
 })
 
 
-//네비바 스크롤 이동 이벤트 
-// let scrollele = document.querySelectorAll(".scroll-ele");
-// let scrollpotint = document.querySelectorAll(".pointer");
-// let first = scrollpotint[0].offsetTop
-// let second = scrollpotint[1].offsetTop
-// let third = scrollpotint[2].offsetTop
-// console.log(first)
+// 네비바 스크롤 이동 이벤트
+let scrollele = document.querySelectorAll(".scroll-ele");
+let scrollpotint = document.querySelectorAll(".pointer");
+let first = scrollpotint[0].offsetTop
+let second = scrollpotint[1].offsetTop
+let third = scrollpotint[2].offsetTop
+console.log(first)
 
-// scrollele[0].addEventListener("click",function(){
-//     window.scrollTo({top:first,behavior:"smooth"});
-// })
-// scrollele[1].addEventListener("click",function(){
-//     window.scrollTo({top:second,behavior:"smooth"});
-// })
-// scrollele[2].addEventListener("click",function(){
-//     window.scrollTo({top:third,behavior:"smooth"});
-// })
+scrollele[0].addEventListener("click",function(){
+    window.scrollTo({top:first,behavior:"smooth"});
+})
+scrollele[1].addEventListener("click",function(){
+    window.scrollTo({top:second,behavior:"smooth"});
+})
+scrollele[2].addEventListener("click",function(){
+    window.scrollTo({top:third,behavior:"smooth"});
+})
 
 
 //////////////////상호//////////////////

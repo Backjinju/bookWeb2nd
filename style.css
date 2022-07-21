@@ -521,7 +521,7 @@ li {
 
 /* //////이상호////////////////////////////////////////////////// */
 .nav{
-    /* �ㅻ퉬諛� �곸뿭 �쒖옉 */
+    /* 네비바 영역시작 */
     height: 39.5px;
     width: 100%
 }
@@ -552,7 +552,7 @@ li {
     cursor: pointer;
 }
 .nav-bar-dropdown{
-    /* �ㅻ퉬諛� �쒕∼�ㅼ슫  */
+    /* 네비바 드롭다운 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -569,7 +569,6 @@ li {
     align-items: center;
 }
 .nav-bar-dropdown > div{
-    /* �쒕∼�ㅼ슫 �대�吏� �뺣젹 */
     margin: 10px 0;
     display: flex;
     justify-content: center;
@@ -588,34 +587,30 @@ li {
     font-size: 1.2rem;
 }
 .nav-bar > span:nth-child(3):hover ~ .nav-bar-dropdown{
-    /* �쒕∼�ㅼ슫 �몃쾭 */
     display: flex;
 }
 
 .nav-bar-modal{
-    /* �ㅻ뜑 �섎떒 媛��ㅼ＜�� 寃� */
     position: absolute;
     width: 100%;
     top: 245px;
-    height: 80px;
+    height: 180px;
     background-color: rgba(153,153,153, 0.3);
     display: none;
     z-index: 200;
 
 }
 .nav-bar > span:nth-child(3):hover ~ .nav-bar-modal{
-    /* �ㅻ뜑 媛��ㅼ＜�� 諛곌꼍 �몃쾭 */
     display: block;
 
 }
 .bestSeller{
-    /* 踰좎뒪�몄��� �쒖옉 */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 285px;
+    height: 390px;
     background-color: #F2F7F9;
 
 }
@@ -624,23 +619,18 @@ li {
 
 }
 .bestSeller > i{
-    /* �꾩씠肄� �ъ씠利� 議곗젅 */
     font-size: 2.4rem;
     cursor: pointer;
 
 }
 .bestSeller-sell{
-    /* 踰좎뒪�몄��� �� �대�吏� 罹먮윭�� */
-    /* width: 60%; */
     height: 250px;
   
 }
 .bestSeller-sell-warp{
-    /* 罹먮윭�� �ㅻ쾭�뚮줈�� �덈뱺 */
     overflow: hidden;
 }
 .bestSeller-sell-move{
-    /* 罹먮윭�� ��吏곸씠�� �붾툕 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -648,11 +638,10 @@ li {
 }
 
 .bestSeller-book{
-    /* 踰좎뒪�몄��� �묒��대�吏� */
-    width: 14%;
+    width: 162px;
     position: relative;
-    margin-top: 70px;
-    transform: translate(280px);
+    margin-top: 160px;
+    transform: translate(190px);
 
 }
 .bestSeller-book-warp{
@@ -667,9 +656,8 @@ li {
 }
 
 .bestSeller-book-modal{
-    /* �묒��대�吏� 紐⑤떖 */
     width: 100%;
-    height: 220px;
+    height: 200px;
     position: absolute;
     top: 0;
     background-color: rgba(153,153,153, 0.5);
@@ -686,14 +674,12 @@ li {
 }
 
 .bestSeller-book > div:hover ~ .bestSeller-book-modal{
-    /* 踰좎뒪�몄��� �묒��대�吏� 紐⑤떖 �몃쾭 */
     display: flex;
 }
 
 
 .bestSeller-book > div:nth-child(2) > img
 ,.bestSeller-book > div:nth-child(3) > img{
-    /* 梨� �대�吏� 罹먮윭�� 以�鍮� */
     display: none;
 }
 
