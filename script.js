@@ -56,35 +56,50 @@ footerScroll.addEventListener('click',function(e){
 })
 ///////////////////////////////////////
 // 베스트셀러 책 캐러셀
-let bookitem = document.querySelectorAll(".bookItem");
-let bookslider = document.querySelector(".bestSeller-book-move")
+// let bookitem = document.querySelectorAll(".bookItem");
+// let bookslider = document.querySelector(".bestSeller-book-move")
 
-let bookfirstChild = bookslider.firstElementChild.cloneNode(true);
-let booklastChild = bookslider.lastChild.cloneNode(true);
-bookslider.append(bookfirstChild)
+// let bookfirstChild = bookslider.firstElementChild.cloneNode(true);
+// let booklastChild = bookslider.lastChild.cloneNode(true);
+// bookslider.append(bookfirstChild)
 
-let width = 0;
-let i = 0
+// let width = 0;
+// let i = 0
 
-setInterval(function(){    
-    if(bookitem.length >= i){
-        bookslider.style.transform = "translate3d(-"+163*(i+1)+"px, 0px, 0px)"
-        bookslider.style.transition = "0.2s"
+// setInterval(function(){    
+//     if(bookitem.length >= i){
+//         bookslider.style.transform = "translate3d(-"+163*(i+1)+"px, 0px, 0px)"
+//         bookslider.style.transition = "0.2s"
        
-        i++
-    }
-    if(i === 3){
-        setTimeout(function(){
+//         i++
+//     }
+//     if(i === 3){
+//         setTimeout(function(){
 
-            bookslider.style.transition = "0s";
-            bookslider.style.transform = "translate3d(0px,0px,0px)";
-        },200)
-        i = 0
-    }
+//             bookslider.style.transition = "0s";
+//             bookslider.style.transform = "translate3d(0px,0px,0px)";
+//         },200)
+//         i = 0
+//     }
         
-},5000)
+// },5000)
 
+//베스트 셀러 큰 이미지
 
+let sellEle = document.querySelectorAll(".sellEle")
+let sellMove = document.querySelector(".bestSeller-sell-move")
+let sellCount = 0;
+
+setInterval(function(){
+    if(sellEle.length >= sellCount){
+        sellEle[sellCount].style.opacity =  "0";
+        sellEle[sellCount].style.transition = "1s"
+        // sellItem.style.zindex = -sellCount
+
+        sellCount++
+
+    }
+},1000)
 //네비바 픽스드 이벤트
 let scrollNav_bar = document.querySelector(".nav-bar"); 
 
@@ -106,7 +121,6 @@ let scrollpotint = document.querySelectorAll(".pointer");
 let first = scrollpotint[0].offsetTop
 let second = scrollpotint[1].offsetTop
 let third = scrollpotint[2].offsetTop
-console.log(first)
 
 scrollele[0].addEventListener("click",function(){
     window.scrollTo({top:first,behavior:"smooth"});

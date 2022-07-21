@@ -18,7 +18,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 100%;
     /* background-color: rgb(64, 135, 201); */
     height: 400vh;
     z-index: 1;
@@ -161,7 +161,7 @@ body{
 }
 /* /////////////////////수근/////////////////////////// */
 .newBook {
-    width: 100%;
+    width: 80%;
     height: 500px;
     margin-top: 50px;
     position: relative;
@@ -520,27 +520,32 @@ li {
 /* ///////////////////////백진주 영역 끝--------------------------------------------------- */
 
 /* //////이상호////////////////////////////////////////////////// */
+a{
+    text-decoration: none;
+}
 .nav{
     /* 네비바 영역시작 */
-    height: 39.5px;
+    height: 80px;
     width: 100%
 }
 .nav-bar{
     display: flex;
     justify-content: center;
     position: relative;
-
+    padding: 20px;
 }
 .nav-bar-fixed{
     position: fixed;
     display: flex;
     justify-content: center;
-    width: 79.8%;
+    align-items: center;
+    width: 100%;
     z-index: 150;
-    top: 10px;
+    top: 0;
+    padding: 20px;
+    background-color: white;
 
 }
-
 .nav-bar > span{
     padding: 10px;
     margin: 0 30px;
@@ -555,24 +560,26 @@ li {
     /* 네비바 드롭다운 */
     display: flex;
     justify-content: center;
-    align-items: center;
     display: none;
     position: absolute;
-    top: 40px;
+    top: 75px;
     width: 100%; 
     z-index: 200;
     background-color: #F2F7F9;
-}
-.nav-bar-dropdown > div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .nav-bar-dropdown > div{
     margin: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.nav-bar-dropdown > div> a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    margin: 10px 20px;
 }
 .nav-bar-dropdown > div> a > img{ 
     width: 120px;
@@ -581,8 +588,8 @@ li {
 .nav-bar-dropdown > div > a > span{
     color: white;
     position: relative;
-    right: 120px;
-    bottom: 160px;
+    right: 10px;
+    bottom: 180px;
     font-weight: 700;
     font-size: 1.2rem;
 }
@@ -593,8 +600,8 @@ li {
 .nav-bar-modal{
     position: absolute;
     width: 100%;
-    top: 245px;
-    height: 180px;
+    top: 325px;
+    height: 100px;
     background-color: rgba(153,153,153, 0.3);
     display: none;
     z-index: 200;
@@ -602,6 +609,7 @@ li {
 }
 .nav-bar > span:nth-child(3):hover ~ .nav-bar-modal{
     display: block;
+    
 
 }
 .bestSeller{
@@ -609,36 +617,29 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 390px;
     background-color: #F2F7F9;
-
-}
-.bestSeller-sell, .bestSeller-book{
-    margin: 0 25px;
-
-}
-.bestSeller > i{
-    font-size: 2.4rem;
-    cursor: pointer;
-
-}
-.bestSeller-sell{
-    height: 250px;
-  
-}
-.bestSeller-sell-warp{
-    overflow: hidden;
+    height: 345px;
+    width: 100%;
+    position: relative;
 }
 .bestSeller-sell-move{
     display: flex;
     justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
 }
+.slideItem{
+    position: absolute;
+    top: 0;
+    left: 0;
 
+}
+.slideItem > img{
+    width: 1445px;
+    height: 348px;
+
+
+}
 .bestSeller-book{
-    width: 162px;
+    width: 210px;
     position: relative;
     margin-top: 160px;
     transform: translate(190px);
@@ -652,7 +653,7 @@ li {
     
 }
 .bestSeller-book > div > div > div > img{
-    width: 162px;
+    width: 210px;
 }
 
 .bestSeller-book-modal{
