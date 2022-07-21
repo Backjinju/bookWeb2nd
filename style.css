@@ -165,7 +165,7 @@ body{
     height: 500px;
     margin-top: 50px;
     position: relative;
-    background-color: rgb(76, 144, 204);
+    background-color:white;
 }
 li {
     list-style: none;
@@ -174,14 +174,14 @@ li {
     padding: 10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    color: #ccc;
+    color: rgb(117, 117, 118);
 }
 .newBook_title:hover {
-    color: rgba(0, 0, 0, 0.571);
+    color: black;
 }
 .newBook_slide_wrapper {
     position: relative;
-    width: 80%;
+    width: 1500px;
     overflow: hidden;
     height: 500px;
     margin: 50px auto;
@@ -192,7 +192,7 @@ li {
 
 }
 .newBook_slides.animated {
-    transition: 0.5s ease-out;
+    transition: 1s ease-out;
 
 }
 .newBook_slides li{
@@ -201,36 +201,43 @@ li {
     float: left;
 }
 .newBook_slides li:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 50px;
 }
 .newBook_slides li .img_box {
     width: 250px;
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 15px;
+    border: 1px solid #aaa;
+    position: relative;
+    overflow: hidden;
 }
 .newBook_slides li .img_box > span {
     text-align: center;
-    margin-top: 30px;
-    color: white;
+    color: black;
+    padding-top: 10px;
+    font-weight: 600;
 }
 .newBook_slides li img {
     width: 150px;
 }
 .newBook_slides li img:hover {
-    width: 200px;
+    opacity: 0.5;
 }
-.newBook_controls span {
+@media (max-width: 1800px) {
+    .newBook_slide_wrapper {
+        width: 100%;
+    }
+  }
+
+/* .newBook_controls span {
     position: absolute;
     top: 40%;
     width: 50px;
     height: 50px;
     text-align: center;
-    background-color:  rgb(76, 144, 204);;
     font-size: 30px;
     color: #ccc;
     cursor: pointer;
@@ -245,8 +252,7 @@ li {
 
 .next {
     right: 0px;
-}
-
+} */
 /* ///////////////////////수근 끝/////////////////////////////////////// */
 .genreBook{
     border: 1px solid black;
